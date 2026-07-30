@@ -1,28 +1,25 @@
-# CodeAlpha Internship Tasks
+# 🏋️ Fitness Tracker App
 
-Welcome to my CodeAlpha Internship repository. This repository contains all the projects I completed during my internship using HTML, CSS, and JavaScript.
+A simple and interactive **Fitness Tracker Web Application** that helps users track their daily fitness activities and maintain a healthy lifestyle. This project is developed using **HTML, CSS, and JavaScript** with a clean and user-friendly interface.
 
-## Projects
+## 🚀 Live Demo
 
-### 1. CodeAlpha_Fitness_Tracker_App
-A responsive fitness tracker application that helps users manage workouts, monitor progress, and maintain a healthy lifestyle.
+🔗 **View the live project here:**  
+https://priyakarnawadi.github.io/Fitness_Tracker_App/
 
-### 2. CodeAlpha_Flashcard_Quiz_App
-An interactive flashcard quiz application that helps users improve their knowledge through engaging quizzes and instant score tracking.
+## 📌 Features
 
-### 3. CodeAlpha_Random_Quote_Generator
-A simple and responsive web application that displays random motivational quotes with a clean and user-friendly interface.
+- ✅ Track daily fitness activities
+- ✅ Monitor health goals
+- ✅ User-friendly interface
+- ✅ Responsive design for different screen sizes
+- ✅ Interactive buttons and components
+- ✅ Simple and easy-to-use layout
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript
 
-## Developed By
-
-**Priya Karnawadi**
-
-## Thank You
-
-Thank you for visiting my CodeAlpha Internship repository.
+## 📂 Project Structure
