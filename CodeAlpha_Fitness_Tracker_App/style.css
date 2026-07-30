@@ -1,0 +1,548 @@
+/* ==========================================================================
+   CSS Custom Properties (Light & Dark Theme Variables)
+   ========================================================================== */
+:root {
+  --bg-gradient: linear-gradient(135deg, #f0f4ff 0%, #e8eefc 100%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(226, 232, 240, 0.8);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  
+  --primary: #6366f1;         /* Electric Indigo */
+  --primary-hover: #4f46e5;
+  --calories-color: #ff6b6b;  /* Coral Red */
+  --water-color: #38bdf8;     /* Sky Blue */
+  --weight-color: #10b981;    /* Emerald */
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -5px rgba(99, 102, 241, 0.1);
+  --radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --card-bg: rgba(30, 41, 59, 0.75);
+  --card-border: rgba(51, 65, 85, 0.6);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+/* Header */
+.app-header {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+}
+
+.header-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.brand h1 span {
+  color: var(--primary);
+}
+
+#current-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.icon-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.icon-btn:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+/* Main Dashboard */
+.dashboard-container {
+  max-width: 1140px;
+  margin: 30px auto;
+  padding: 0 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Card Container styling */
+.card-box {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.card-box:hover {
+  transform: translateY(-2px);
+}
+
+/* Quote Banner */
+.quote-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 4px solid var(--primary);
+}
+
+.quote-icon {
+  font-size: 1.8rem;
+}
+
+#quote-text {
+  font-style: italic;
+  font-weight: 500;
+}
+
+#quote-author {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Circular Rings Grid */
+.rings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.ring-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ring-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ring-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.calories-badge { background: rgba(255, 107, 107, 0.15); color: var(--calories-color); }
+.water-badge { background: rgba(56, 189, 248, 0.15); color: var(--water-color); }
+.weight-badge { background: rgba(16, 185, 129, 0.15); color: var(--weight-color); }
+
+/* SVG Progress Rings */
+.circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.progress-ring-bg {
+  fill: transparent;
+  stroke: var(--card-border);
+}
+
+.progress-ring-fill {
+  fill: transparent;
+  stroke: var(--primary);
+  stroke-dasharray: 339.292; /* 2 * PI * 54 */
+  stroke-dashoffset: 339.292;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.8s ease-in-out;
+}
+
+.steps-circle { stroke: var(--primary); }
+.calories-circle { stroke: var(--calories-color); }
+.water-circle { stroke: var(--water-color); }
+
+.ring-center-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.val-bold {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.ring-center-text small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Inputs & Actions */
+.goal-input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.goal-input-group input {
+  width: 75px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+.btn-sm, .btn-action-sm, .btn-action {
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-sm {
+  background: var(--primary);
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+}
+
+.btn-action-sm {
+  background: var(--card-border);
+  color: var(--text-main);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+}
+
+.btn-action-sm:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-action {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 10px;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-action:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Body Metrics Display */
+.bmi-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 16px 0;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.metric-value strong {
+  font-size: 1.2rem;
+}
+
+.metric-divider {
+  width: 1px;
+  height: 30px;
+  background: var(--card-border);
+}
+
+.stacked-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row {
+  display: flex;
+  gap: 8px;
+}
+
+.form-row input {
+  width: 50%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+/* Dashboard Split */
+.dashboard-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Logs */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.btn-danger-link {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.workout-list {
+  list-style: none;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.workout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.workout-info h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.workout-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Weekly Interactive Chart */
+.weekly-bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 140px;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.day-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.bar-track {
+  width: 16px;
+  height: 100px;
+  background: var(--card-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  background: var(--primary);
+  border-radius: 10px;
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bar-fill:hover {
+  filter: brightness(1.2);
+}
+
+.day-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--card-border);
+  margin-top: auto;
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sub-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.center-text { text-align: center; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-split {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===========================
+   Toast Notification
+=========================== */
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #16a34a;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
