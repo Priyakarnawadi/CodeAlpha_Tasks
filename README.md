@@ -1,25 +1,83 @@
-# 🏋️ Fitness Tracker App
+# 🚀 CodeAlpha Internship Tasks
 
-A simple and interactive **Fitness Tracker Web Application** that helps users track their daily fitness activities and maintain a healthy lifestyle. This project is developed using **HTML, CSS, and JavaScript** with a clean and user-friendly interface.
+Welcome to my **CodeAlpha Internship** repository! This repository contains all the projects I successfully completed during my internship using **HTML, CSS, and JavaScript**.
 
-## 🚀 Live Demo
+---
 
-🔗 **View the live project here:**  
+# 👩‍💻 Developed By
+
+**Priya Karnawadi**
+
+---
+
+# 📂 Projects Included
+
+## 1️⃣ CodeAlpha_Fitness_Tracker_App
+
+A responsive Fitness Tracker web application that helps users track workouts, monitor health goals, and maintain a healthy lifestyle.
+
+### 🔗 Live Demo
 https://priyakarnawadi.github.io/Fitness_Tracker_App/
 
-## 📌 Features
-
-- ✅ Track daily fitness activities
-- ✅ Monitor health goals
-- ✅ User-friendly interface
-- ✅ Responsive design for different screen sizes
-- ✅ Interactive buttons and components
-- ✅ Simple and easy-to-use layout
-
-## 🛠️ Technologies Used
-
+### 🛠 Technologies
 - HTML5
 - CSS3
 - JavaScript
 
-## 📂 Project Structure
+---
+
+## 2️⃣ CodeAlpha_Flashcard_Quiz_App
+
+An interactive Flashcard Quiz application that allows users to practice questions, test their knowledge, and improve learning through an engaging interface.
+
+### 🔗 Live Demo
+https://priyakarnawadi.github.io/Flashcard_Quiz_App/
+
+### 🛠 Technologies
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+## 3️⃣ CodeAlpha_Random_Quote_Generator
+
+A responsive Random Quote Generator that displays inspiring quotes with a clean interface and generates a new quote at the click of a button.
+
+### 🔗 Live Demo
+https://priyakarnawadi.github.io/Random_Quote_Generator/
+
+### 🛠 Technologies
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+# 💻 Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Git
+- GitHub
+
+---
+
+# 📁 Repository Structure
+
+```
+CodeAlpha_Tasks
+│
+├── CodeAlpha_Fitness_Tracker_App
+├── CodeAlpha_Flashcard_Quiz_App
+└── CodeAlpha_Random_Quote_Generator
+```
+
+---
+
+# 🙏 Acknowledgement
+
+This repository was created as part of the **CodeAlpha Web Development Internship** to showcase my learning, projects, and practical web development skills.
+
+Thank you for visiting my repository! ⭐
